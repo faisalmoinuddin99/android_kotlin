@@ -4,8 +4,12 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Text
@@ -19,7 +23,6 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.home_application_demo.R
-import com.google.android.gms.wallet.button.ButtonConstants
 
 @Composable
 fun ExploreButtonsScreen() {
@@ -60,24 +63,32 @@ fun MyButton() {
 
 @Composable
 fun MyRadioGroup() {
-    val radioButton = listOf(0, 1, 2, 3) // 1
+    val radioButton = listOf(0, 1, 2, 3)
     val selectedButton = remember {
-        mutableStateOf(radioButton.last())
-    }// 2
+        mutableStateOf(radioButton.first())
+    }
     Row {
         radioButton.forEach { index ->
             val isSelected = index == selectedButton.value
-            val colors = RadioButtonDefaults.colors(
-                selectedColor = colorResource(id = R.color.teal_200),
-                unselectedColor = colorResource(id = R.color.white),
-            ) //3
-            RadioButton(selected = isSelected, onClick = { selectedButton.value = index }, colors = colors)
+            val color = RadioButtonDefaults.colors(
+                selectedColor = colorResource(id = R.color.teal_700),
+                unselectedColor = colorResource(id = R.color.white)
+            )
+            RadioButton(
+                selected = isSelected, onClick = { selectedButton.value = index },
+                colors = color
+            )
         }
     }
-
 }
 
 @Composable
 fun MyFloatingActionButton() {
-
+    FloatingActionButton(onClick = { /*TODO*/ },
+        containerColor = colorResource(id = R.color.black),
+        contentColor = Color.White,
+        content = {
+            Icon(Icons.Filled.Favorite, contentDescription = "Test the FAB")
+        }
+    )
 }
