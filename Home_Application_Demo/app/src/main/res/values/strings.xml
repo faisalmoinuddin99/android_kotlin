@@ -3,4 +3,11 @@
     <string name="jetpack_compose">Your Jetpack Compose Text</string>
     <string name="email">Email ID</string>
     <string name="button_text">This is Button</string>
+    <string name="alert_dialog_title">Diwali Offer</string>
+    <string name="alert_dialog_text">
+        Buy any one shirt get two free shirts extra
+    </string>
+    <string name="alert_dialog_confirm">
+        Confirm
+    </string>
 </resources>

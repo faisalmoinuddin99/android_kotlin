@@ -16,6 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.home_application_demo.screens.ExploreButtonsScreen
+import com.example.home_application_demo.screens.MyAlertDialog
 import com.example.home_application_demo.screens.MyRadioGroup
 import com.example.home_application_demo.screens.ProgressIndicatorScreen
 import com.example.home_application_demo.screens.TextFieldScreen
@@ -42,11 +43,17 @@ class MainActivity : ComponentActivity() {
                     /* coming from TextFieldScreen.kt file 2
                     TextFieldScreen()
                      */
+
                     /* coming from ButtonScreen.kt
                     ExploreButtonsScreen()
 
                      */
+
+                    /* coming from ProgressIndicatorScreen
                     ProgressIndicatorScreen()
+                     */
+
+                    MyAlertDialog()
 
                 }
 
