@@ -17,6 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.home_application_demo.screens.ExploreButtonsScreen
 import com.example.home_application_demo.screens.MyRadioGroup
+import com.example.home_application_demo.screens.ProgressIndicatorScreen
 import com.example.home_application_demo.screens.TextFieldScreen
 import com.example.home_application_demo.screens.TextScreen
 import com.example.home_application_demo.ui.theme.Home_Application_DemoTheme
@@ -41,8 +42,11 @@ class MainActivity : ComponentActivity() {
                     /* coming from TextFieldScreen.kt file 2
                     TextFieldScreen()
                      */
-
+                    /* coming from ButtonScreen.kt
                     ExploreButtonsScreen()
+
+                     */
+                    ProgressIndicatorScreen()
 
                 }
 
