@@ -10,4 +10,7 @@
     <string name="alert_dialog_confirm">
         Confirm
     </string>
+    <string name="first">first</string>
+    <string name="second">second</string>
+    <string name="third">third</string>
 </resources>

@@ -17,7 +17,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.home_application_demo.screens.ExploreButtonsScreen
 import com.example.home_application_demo.screens.MyAlertDialog
+import com.example.home_application_demo.screens.MyColumn
 import com.example.home_application_demo.screens.MyRadioGroup
+import com.example.home_application_demo.screens.MyRow
 import com.example.home_application_demo.screens.ProgressIndicatorScreen
 import com.example.home_application_demo.screens.TextFieldScreen
 import com.example.home_application_demo.screens.TextScreen
@@ -49,11 +51,15 @@ class MainActivity : ComponentActivity() {
 
                      */
 
-                    /* coming from ProgressIndicatorScreen
+                    /* coming from ProgressIndicatorScreen.kt
                     ProgressIndicatorScreen()
                      */
 
+                    /* coming from AlertDialogScree.kt
                     MyAlertDialog()
+
+                     */
+                    MyRow()
 
                 }
 
