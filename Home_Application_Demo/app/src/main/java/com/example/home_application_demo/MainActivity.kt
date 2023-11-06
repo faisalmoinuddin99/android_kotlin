@@ -14,6 +14,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import com.example.home_application_demo.screens.MyBox
 import com.example.home_application_demo.screens.MyColumn
 
 import com.example.home_application_demo.screens.MyRow
@@ -60,8 +61,8 @@ class MainActivity : ComponentActivity() {
                     MyRow()
 
                      */
-                    MyColumn()
-
+//                    MyColumn()
+                    MyBox()
                 }
 
             }
