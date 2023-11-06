@@ -9,18 +9,14 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import com.example.home_application_demo.screens.ExploreButtonsScreen
-import com.example.home_application_demo.screens.MyAlertDialog
 import com.example.home_application_demo.screens.MyColumn
-import com.example.home_application_demo.screens.MyRadioGroup
+
 import com.example.home_application_demo.screens.MyRow
-import com.example.home_application_demo.screens.ProgressIndicatorScreen
 import com.example.home_application_demo.screens.TextFieldScreen
 import com.example.home_application_demo.screens.TextScreen
 import com.example.home_application_demo.ui.theme.Home_Application_DemoTheme
@@ -59,7 +55,12 @@ class MainActivity : ComponentActivity() {
                     MyAlertDialog()
 
                      */
+
+                    /* coming from RowScreen.kt
                     MyRow()
+
+                     */
+                    MyColumn()
 
                 }
 
