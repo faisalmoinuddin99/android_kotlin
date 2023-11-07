@@ -1,5 +1,6 @@
 package com.example.home_application_demo
 
+import SurfaceScreen
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -61,8 +62,15 @@ class MainActivity : ComponentActivity() {
                     MyRow()
 
                      */
-//                    MyColumn()
+                    /* coming from ColumnScreen.kt
+                    MyColumn
+
+                     */
+                    /* coming from BoxLayoutScreen.kt
                     MyBox()
+
+                     */
+                    SurfaceScreen()
                 }
 
             }
