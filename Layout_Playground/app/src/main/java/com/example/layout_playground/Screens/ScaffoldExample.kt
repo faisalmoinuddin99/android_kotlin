@@ -22,11 +22,18 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.layout_playground.R
 
+ data class NavigationItem(
+    val title : String,
+    val selectedIcon : ImageVector,
+    val unselectedIcon : ImageVector,
+    val badgeCount : Int? = null
+)
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MyScaffoldExample() {
@@ -83,4 +90,6 @@ fun MyScaffoldExample() {
             )
         }
     }
+
+
 }
