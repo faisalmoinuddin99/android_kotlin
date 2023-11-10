@@ -18,7 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.layout_playground.Screens.MyScaffoldExample
-import com.example.layout_playground.Screens.NavigationItem
+
 import com.example.layout_playground.ui.theme.Layout_PlaygroundTheme
 
 class MainActivity : ComponentActivity() {
@@ -26,23 +26,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Layout_PlaygroundTheme {
-                val item = listOf(
-                    NavigationItem(
-                        title = "All",
-                        selectedIcon = Icons.Filled.Home,
-                        unselectedIcon = Icons.Outlined.Home,
-                    ),
-                    NavigationItem(
-                        title = "Info",
-                        selectedIcon = Icons.Filled.Info,
-                        unselectedIcon = Icons.Outlined.Info
-                    ),
-                    NavigationItem(
-                        title = "Settings",
-                        selectedIcon = Icons.Filled.Settings,
-                        unselectedIcon = Icons.Outlined.Settings
-                    )
-                )
+
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),

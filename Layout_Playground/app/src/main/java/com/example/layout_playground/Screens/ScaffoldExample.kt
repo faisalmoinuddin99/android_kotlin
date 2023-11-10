@@ -6,10 +6,18 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.outlined.Home
+import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -27,16 +35,31 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.layout_playground.R
+import com.example.layout_playground.model.NavigationItems
 
- data class NavigationItem(
-    val title : String,
-    val selectedIcon : ImageVector,
-    val unselectedIcon : ImageVector,
-    val badgeCount : Int? = null
-)
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MyScaffoldExample() {
+
+    // Present inside Navigation items
+    val item = listOf(
+        NavigationItems(
+            title = "All",
+            selectedIcon = Icons.Filled.Home,
+            unselectedIcon = Icons.Outlined.Home
+        ),
+        NavigationItems(
+            title = "Info",
+            selectedIcon = Icons.Filled.Info,
+            unselectedIcon = Icons.Outlined.Info,
+            badgeCount = 45
+        ),
+        NavigationItems(
+            title = "Settings",
+            selectedIcon = Icons.Filled.Settings,
+            unselectedIcon = Icons.Outlined.Settings
+        ),
+    )
 
     var presses by remember {
         mutableIntStateOf(0)
@@ -50,7 +73,13 @@ fun MyScaffoldExample() {
                 ),
                 title = {
                     Text(text = "Top App bar")
-                })
+                },
+                navigationIcon = {
+                    IconButton(onClick = { /*TODO*/ }) {
+                        Icon(imageVector = Icons.Default.Menu, contentDescription = "Menu Icon")
+                    }
+                }
+            )
         },
         bottomBar = {
             BottomAppBar(
@@ -65,14 +94,14 @@ fun MyScaffoldExample() {
                 )
             }
         },
-
         floatingActionButton = {
             FloatingActionButton(onClick = { presses++ }) {
                 Icon(Icons.Default.Add, contentDescription = "Add")
 
             }
-        }
-    ) { innerPadding ->
+        },
+
+        ) { innerPadding ->
         Column(
             modifier = Modifier.padding(innerPadding),
             verticalArrangement = Arrangement.spacedBy(16.dp)
