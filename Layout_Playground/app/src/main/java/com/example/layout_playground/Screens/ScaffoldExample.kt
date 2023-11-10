@@ -2,9 +2,11 @@ package com.example.layout_playground.Screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -21,6 +23,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.layout_playground.R
 
@@ -42,6 +45,20 @@ fun MyScaffoldExample() {
                     Text(text = "Top App bar")
                 })
         },
+        bottomBar = {
+            BottomAppBar(
+                containerColor = colorResource(id = R.color.purple_500),
+                contentColor = colorResource(id = R.color.white)
+            ) {
+                Text(
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    textAlign = TextAlign.Center,
+                    text = "Bottom app bar",
+                )
+            }
+        },
+
         floatingActionButton = {
             FloatingActionButton(onClick = { presses++ }) {
                 Icon(Icons.Default.Add, contentDescription = "Add")
