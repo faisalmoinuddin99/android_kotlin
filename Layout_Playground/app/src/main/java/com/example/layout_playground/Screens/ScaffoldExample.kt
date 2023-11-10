@@ -3,7 +3,11 @@ package com.example.layout_playground.Screens
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -11,6 +15,7 @@ import androidx.compose.material3.TopAppBarColors
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -24,7 +29,7 @@ import com.example.layout_playground.R
 fun MyScaffoldExample() {
 
     var presses by remember {
-        mutableStateOf(0)
+        mutableIntStateOf(0)
     }
     Scaffold(
         topBar = {
@@ -36,6 +41,12 @@ fun MyScaffoldExample() {
                 title = {
                     Text(text = "Top App bar")
                 })
+        },
+        floatingActionButton = {
+            FloatingActionButton(onClick = { presses++ }) {
+                Icon(Icons.Default.Add, contentDescription = "Add")
+
+            }
         }
     ) { innerPadding ->
         Column(
