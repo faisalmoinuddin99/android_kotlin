@@ -2,7 +2,9 @@ package com.example.layout_playground.Screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -22,6 +24,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.NavigationDrawerItem
+import androidx.compose.material3.NavigationDrawerItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -84,6 +87,7 @@ fun MyScaffoldExample() {
     ModalNavigationDrawer(
         drawerContent = {
             ModalDrawerSheet {
+                Spacer(modifier = Modifier.height(16.dp))
                 items.forEachIndexed { index, item ->
                     NavigationDrawerItem(
                         label = {
@@ -91,6 +95,10 @@ fun MyScaffoldExample() {
                         },
                         selected = index == selectedItemIndex,
                         onClick = {
+                            /*
+                            Apply routing here ... like this
+                                navController.navigate(item.route)
+                             */
                             selectedItemIndex = index
                             scope.launch {
                                 drawerState.close()
@@ -110,7 +118,10 @@ fun MyScaffoldExample() {
                                 item.badgeCount = presses
                                 Text(text = item.badgeCount.toString())
                             }
-                        }
+                        },
+                        modifier = Modifier.padding(
+                            NavigationDrawerItemDefaults.ItemPadding
+                        )
                     )
                 }
             }
