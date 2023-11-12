@@ -130,6 +130,8 @@ fun MyScaffoldExample() {
     )
     /* Below Piece of code will display the content outside the navigation drawer hence
     its good to put Scaffold or any prefer layout
+
+    Scaffold Used Below
      */
     {
         Scaffold(
@@ -189,6 +191,7 @@ fun MyScaffoldExample() {
                 """.trimIndent(),
                     modifier = Modifier.padding(8.dp)
                 )
+                MyScrollingScreen()
             }
         }
 
