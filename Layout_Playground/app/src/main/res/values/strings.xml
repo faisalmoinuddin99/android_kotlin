@@ -3,4 +3,7 @@
     <string name="first_book_1">Book cover page 1</string>
     <string name="first_book_2">Book cover page 2</string>
     <string name="first_book_3">Book cover page 3</string>
+    <string name="messi">Messi</string>
+    <string name="ronaldo">Ronaldo</string>
+    <string name="haaland">Haaland</string>
 </resources>
