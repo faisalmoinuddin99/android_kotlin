@@ -59,4 +59,22 @@ fun BookImage(
         contentScale = ContentScale.FillBounds,
         modifier = Modifier.size(476.dp, 616.dp)
     )
+    /*
+   1. ContentScale.FillBounds -
+        This can be useful in scenarios where you want the entire content to be
+        visible and fill the available space, even if it means cropping some parts
+        of the content. For example, this might be appropriate for a background
+        image where you want to ensure that the entire screen is covered, regardless
+        of the screen's aspect ratio.
+
+    2. @DrawableRes -
+        When you use @DrawableRes, it informs the compiler that the value assigned
+        to that parameter or variable should be a valid drawable resource ID. This
+        helps in preventing runtime crashes that may occur if an incorrect resource
+        type is used.
+
+    3. @StringRes -
+        Similar to @DrawableRes, using @StringRes helps ensure that the provided value
+        is a valid string resource ID, providing compile-time safety.
+     */
 }
