@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.android_playground_2.screen.GridScreen
 import com.example.android_playground_2.screen.ListScreen
 import com.example.android_playground_2.ui.theme.Android_playground_2Theme
 
@@ -24,7 +25,8 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
 //                    Greeting("Android")
-                    ListScreen()
+//                    ListScreen()
+                    GridScreen()
                 }
             }
         }
