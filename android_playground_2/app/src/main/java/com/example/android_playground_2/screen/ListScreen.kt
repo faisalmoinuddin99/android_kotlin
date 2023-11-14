@@ -18,6 +18,7 @@ import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.imageResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -87,17 +88,18 @@ fun ListItem(
             ),
             fontSize = 22.sp,
             fontWeight = FontWeight.Bold,
-            color = colorResource(id = R.color.colorPrimary)
+            color = colorResource(id = R.color.white)
         )
         Spacer(modifier = modifier.height(8.dp))
-        LazyRow{
-            items(bookCategory.bookImageRes) {
-                items -> BookImage(items)
+        LazyRow {
+            items(bookCategory.bookImageRes) { items ->
+                BookImage(items)
             }
         }
     }
 }
 
+/*
 @Composable
 fun BookImage(
     @DrawableRes imageResId: Int,
@@ -107,6 +109,22 @@ fun BookImage(
         bitmap = ImageBitmap.imageResource(imageResId),
         contentDescription = contentDescription?.let { stringResource(id = it) },
         contentScale = ContentScale.FillBounds,
-        modifier = Modifier.size(476.dp, 616.dp)
+        modifier = Modifier
+            .size(476.dp, 616.dp)
+            .padding(10.dp)
+    )
+}
+
+ */
+
+@Composable
+fun BookImage(
+    @DrawableRes imageResource: Int
+) {
+    Image(
+        painter = painterResource(id = imageResource),
+        contentScale = ContentScale.Fit,
+        contentDescription = stringResource(id = R.string.book_image),
+        modifier = Modifier.size(170.dp, 200.dp)
     )
 }
