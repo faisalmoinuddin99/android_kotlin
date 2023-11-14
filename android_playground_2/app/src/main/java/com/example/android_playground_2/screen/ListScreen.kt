@@ -1,15 +1,23 @@
 package com.example.android_playground_2.screen
 
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -82,5 +90,23 @@ fun ListItem(
             color = colorResource(id = R.color.colorPrimary)
         )
         Spacer(modifier = modifier.height(8.dp))
+        LazyRow{
+            items(bookCategory.bookImageRes) {
+                items -> BookImage(items)
+            }
+        }
     }
+}
+
+@Composable
+fun BookImage(
+    @DrawableRes imageResId: Int,
+    @StringRes contentDescription: Int? = null
+) {
+    Image(
+        bitmap = ImageBitmap.imageResource(imageResId),
+        contentDescription = contentDescription?.let { stringResource(id = it) },
+        contentScale = ContentScale.FillBounds,
+        modifier = Modifier.size(476.dp, 616.dp)
+    )
 }
