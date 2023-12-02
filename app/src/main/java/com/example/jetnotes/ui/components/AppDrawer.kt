@@ -12,8 +12,10 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -23,6 +25,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.jetnotes.ui.theme.JetNotesTheme
+import com.example.jetnotes.ui.theme.JetNotesThemeSettings
 
 
 @Composable
@@ -107,15 +110,27 @@ private fun ScreenNavigationButton(
 
 
 @Composable
+private fun LightDarkThemeItem() {
+    Row {
+        Text(text = "Turn on dark theme")
+        Switch(checked = JetNotesThemeSettings.isDarkThemeEnabled, onCheckedChange = {
+            JetNotesThemeSettings.isDarkThemeEnabled = it
+        }
+        )
+    }
+}
+
+@Composable
 @Preview
 private fun AppDrawerHeaderPreview() {
     JetNotesTheme {
 //        AppDrawerHeader()
-        ScreenNavigationButton(
-            icon = Icons.Filled.Home,
-            label = "Notes",
-            isSelected = true,
-            onClick = { }
-        )
+//        ScreenNavigationButton(
+//            icon = Icons.Filled.Home,
+//            label = "Notes",
+//            isSelected = true,
+//            onClick = { }
+//        )
+        LightDarkThemeItem()
     }
 }

@@ -10,10 +10,14 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
+
 
 private val DarkColorScheme = darkColorScheme(
         primary = Purple80,
@@ -37,6 +41,17 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+private val DarkThemeColors = lightColorScheme(
+    primary = green,
+    primaryContainer = greenDark,
+    secondary = green
+)
+private val LightThemeColors = lightColorScheme(
+    primary = green,
+    primaryContainer = greenDark,
+    secondary = green
+)
+
 @Composable
 fun JetNotesTheme(
         darkTheme: Boolean = isSystemInDarkTheme(),
@@ -54,6 +69,9 @@ fun JetNotesTheme(
         else -> LightColorScheme
     }
     val view = LocalView.current
+    val isDarkThemeEnabled = isSystemInDarkTheme() || JetNotesThemeSettings.isDarkThemeEnabled
+    val colors = if (isDarkThemeEnabled) DarkThemeColors else LightThemeColors
+
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
@@ -67,4 +85,11 @@ fun JetNotesTheme(
             typography = Typography,
             content = content
     )
+}
+
+/**
+ * Allows changing between light and a dark theme from the app's settings.
+ */
+object JetNotesThemeSettings {
+    var isDarkThemeEnabled by mutableStateOf(false)
 }
