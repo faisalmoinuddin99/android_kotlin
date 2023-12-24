@@ -4,16 +4,15 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
+
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.MaterialTheme
+
 import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.ScaffoldDefaults
-import androidx.compose.material3.Surface
+
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
@@ -32,8 +31,10 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             JetNotesTheme {
+
                 // 1. first create a drawer state hook to open - close drawer
                 val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
+
                 // 2. define scope coroutine
                 val scope = rememberCoroutineScope()
 
@@ -41,6 +42,9 @@ class MainActivity : ComponentActivity() {
                 ModalNavigationDrawer(
                     drawerContent = {
                         ModalDrawerSheet {
+                            /*
+                            Currently our Navigation Screen is Hard coded
+                             */
                             AppDrawer(currentScreen = Screen.Notes, onScreenSelected = {
                                 scope.launch {
                                     drawerState.close()
@@ -71,7 +75,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
+        text = "Welcome to chapter 6 -  $name!",
         modifier = modifier
     )
 }
