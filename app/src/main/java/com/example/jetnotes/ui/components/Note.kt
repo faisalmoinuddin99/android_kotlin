@@ -15,6 +15,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.jetnotes.R
+import com.example.jetnotes.ui.theme.green
 
 @Composable
 fun Note() {
@@ -22,11 +23,7 @@ fun Note() {
     Row(
         modifier = Modifier.fillMaxWidth()
     ) {
-        Box(
-            modifier = Modifier
-                .size(40.dp)
-                .background(color = colorResource(R.color.green))
-        )
+       NoteColor(color = green, size = 40.dp, border = 1.dp, padding = 4.dp)
         Column(
             modifier = Modifier.weight(1f)
         ) {
