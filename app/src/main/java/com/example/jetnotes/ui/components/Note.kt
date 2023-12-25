@@ -36,7 +36,10 @@ fun Note() {
             .background(Color.White, backgroundShape)
 
     ) {
-        NoteColor(color = green, size = 40.dp, border = 1.dp, padding = 4.dp)
+        NoteColor(
+            modifier = Modifier.align(Alignment.CenterVertically),
+            color = green, size = 40.dp, border = 1.dp, padding = 4.dp
+        )
         Column(
             modifier = Modifier
                 .weight(1f)
