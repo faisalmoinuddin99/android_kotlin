@@ -13,6 +13,7 @@ import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Shapes
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
@@ -37,14 +38,18 @@ fun Note() {
     ) {
         NoteColor(color = green, size = 40.dp, border = 1.dp, padding = 4.dp)
         Column(
-            modifier = Modifier.weight(1f)
+            modifier = Modifier
+                .weight(1f)
+                .align(Alignment.CenterVertically)
         ) {
             Text(text = "Title", maxLines = 1, color = Color.Black)
             Text(text = "Content", maxLines = 1, color = Color.Black)
         }
         Checkbox(
             checked = false, onCheckedChange = {},
-            modifier = Modifier.padding(start = 8.dp)
+            modifier = Modifier
+                .padding(start = 8.dp)
+                .align(Alignment.CenterVertically)
         )
     }
 
